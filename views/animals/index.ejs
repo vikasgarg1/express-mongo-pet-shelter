@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 class="page-header">Animal Shelter</h1>
+
+<ul class="list-group">
+  <% animals.forEach(function (animalItem) { %>
+    <li class="list-group-item">
+      <strong><%= animalItem.title %>: </strong>
+      <%= animalItem.description %>
+      || Completed:
+      <% if (animalItem.completed == true) { %>
+        <span class="label label-success">True</span>
+      <% } else if (animalItem.completed == false) { %>
+        <span class="label label-danger">False</span>
+      <% } %>
+      <a class="pull-right" href=<%= "/animal/" + animalItem._id %>>View</a>
+    </li>
+  <% }) %>
+</ul>
+
+</div>
